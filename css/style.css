@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Basic Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #A2DAE0; /* Light Blue/Green */
+    color: #06065D; /* Dark Blue */
+}
+
+header, footer {
+    background-color: #06065D; /* Dark Blue */
+    color: #A2DAE0; /* Light Blue/Green */
+    padding: 1em;
+    text-align: center;
+}
+
+nav {
+    background-color: #0E49B5; /* Medium Blue */
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #A2DAE0; /* Light Blue/Green */
+    text-decoration: none;
+    padding: 1em;
+}
+
+nav ul li a:hover, nav ul li.active a {
+    background-color: #A70107; /* Dark Red */
+    border-radius: 5px;
+}
+
+main {
+    padding: 2em 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 2em;
+}
+
+h1, h2 {
+    color: #A70107; /* Dark Red */
+}
+
+a {
+    color: #ED0101; /* Bright Red */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 0;
+}
+
+iframe {
+    max-width: 100%;
+    border: 2px solid #06065D; /* Dark Blue */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ED0101; /* Bright Red */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cta-button:hover {
+    background-color: #A70107; /* Dark Red */
+}
