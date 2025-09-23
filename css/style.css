@@ -7,6 +7,7 @@ body {
     padding: 0;
     background-color: #A2DAE0; /* Light Blue/Green */
     color: #06065D; /* Dark Blue */
+    line-height: 1.6;
 }
 
 header, footer {
@@ -14,11 +15,15 @@ header, footer {
     color: #A2DAE0; /* Light Blue/Green */
     padding: 1em;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav {
     background-color: #0E49B5; /* Medium Blue */
     padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
@@ -53,12 +58,18 @@ main {
     margin: 0 auto;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 section {
     background-color: white;
     padding: 2em;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin-bottom: 2em;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 h1, h2 {
@@ -71,6 +82,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+p {
+    margin-bottom: 1.2em;
 }
 
 footer p {
@@ -91,8 +106,27 @@ iframe {
     border-radius: 5px;
     margin-top: 10px;
     margin-right: 10px;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
     background-color: #A70107; /* Dark Red */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Course list styling */
+.course-list li {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+.course-list li:hover {
+    transform: scale(1.03);
+    background-color: #A2DAE0; /* Light Blue/Green */
+    color: #06065D; /* Dark Blue */
 }
