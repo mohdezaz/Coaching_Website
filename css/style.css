@@ -130,3 +130,39 @@ iframe {
     background-color: #A2DAE0; /* Light Blue/Green */
     color: #06065D; /* Dark Blue */
 }
+
+/* Contact page styling */
+.contact-section {
+    text-align: center;
+}
+
+.contact-info {
+    display: inline-block;
+    text-align: left;
+    margin-top: 2em;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+    font-size: 1.2em;
+}
+
+.contact-item i {
+    color: #0E49B5; /* Medium Blue */
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-item a, .contact-item span {
+    color: #06065D; /* Dark Blue */
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    color: #ED0101; /* Bright Red */
+}
