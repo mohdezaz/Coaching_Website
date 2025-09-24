@@ -166,3 +166,36 @@ iframe {
     text-decoration: underline;
     color: #ED0101; /* Bright Red */
 }
+
+/* Featured Courses Section */
+.featured-courses {
+    text-align: center;
+}
+
+.course-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.course-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2em;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.course-card h3 {
+    color: #0E49B5; /* Medium Blue */
+    margin-top: 0;
+}
