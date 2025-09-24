@@ -116,20 +116,6 @@ iframe {
 }
 
 /* Course list styling */
-.course-list li {
-    background-color: #f4f4f4;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-size: 1.1em;
-}
-
-.course-list li:hover {
-    transform: scale(1.03);
-    background-color: #A2DAE0; /* Light Blue/Green */
-    color: #06065D; /* Dark Blue */
-}
 
 /* Contact page styling */
 .contact-section {
