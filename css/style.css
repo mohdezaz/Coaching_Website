@@ -47,6 +47,7 @@ nav ul li a {
 nav ul li a:hover, nav ul li.active a {
     background-color: #A70107; /* Dark Red */
     border-radius: 5px;
+    text-decoration: none !important;
 }
 
 main {
@@ -81,7 +82,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 p {
@@ -111,8 +112,7 @@ iframe {
 
 .cta-button:hover {
     background-color: #A70107; /* Dark Red */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration: none !important;
 }
 
 /* Course list styling */
@@ -149,7 +149,7 @@ iframe {
 }
 
 .contact-item a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: #ED0101; /* Bright Red */
 }
 
@@ -233,7 +233,7 @@ iframe {
 
 .hero-text {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
