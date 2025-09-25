@@ -15,7 +15,17 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li class="active"><a href="courses.html">Courses</a></li>
+            <li class="dropdown active">
+                <a href="courses.html" class="dropbtn">Courses</a>
+                <div class="dropdown-content">
+                    <a href="courses.html#course-6-12">Classes 6th to 12th</a>
+                    <a href="courses.html#course-neet">NEET</a>
+                    <a href="courses.html#course-jee">JEE</a>
+                    <a href="courses.html#course-entrance">Entrance Exams</a>
+                    <a href="courses.html#course-gov">Government Exams</a>
+                    <a href="courses.html#course-special">Special Classes</a>
+                </div>
+            </li>
             <li><a href="videos.html">Videos</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -25,32 +35,32 @@
         <section>
             <h2>Explore Our Programs</h2>
 
-            <button class="accordion">Classes 6th to 12th</button>
+            <button id="course-6-12" class="accordion">Classes 6th to 12th</button>
             <div class="panel">
                 <p>All subjects covered with a focus on building a strong academic foundation.</p>
             </div>
 
-            <button class="accordion">NEET</button>
+            <button id="course-neet" class="accordion">NEET</button>
             <div class="panel">
                 <p>Comprehensive preparation for the National Eligibility cum Entrance Test.</p>
             </div>
 
-            <button class="accordion">JEE</button>
+            <button id="course-jee" class="accordion">JEE</button>
             <div class="panel">
                 <p>Expert guidance for the Joint Entrance Examination for engineering aspirants.</p>
             </div>
 
-            <button class="accordion">JMI, AMU, DU, CUET</button>
+            <button id="course-entrance" class="accordion">JMI, AMU, DU, CUET</button>
             <div class="panel">
                 <p>Specialized coaching for various university entrance exams.</p>
             </div>
 
-            <button class="accordion">Government Exams</button>
+            <button id="course-gov" class="accordion">Government Exams</button>
             <div class="panel">
                 <p>Prepare for a career in the public sector with our expert-led courses.</p>
             </div>
 
-            <button class="accordion">Special Classes</button>
+            <button id="course-special" class="accordion">Special Classes</button>
             <div class="panel">
                 <p>Targeted coaching in Maths, Biology, Chemistry, and Physics.</p>
             </div>
