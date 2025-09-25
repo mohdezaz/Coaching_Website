@@ -321,6 +321,32 @@ iframe {
     border-bottom: 1px solid #ddd;
 }
 
+/* Contact Form Styling */
+.contact-form-section {
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#contact-form button {
+    width: 100%;
+}
+
 /* Footer Styling */
 .site-footer {
     background-color: #06065D;
