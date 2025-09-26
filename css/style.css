@@ -516,6 +516,23 @@ iframe {
     padding-left: 20px;
 }
 
+/* Header Styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 80px;
+    margin-right: 20px;
+}
+
+header h1 {
+    color: #A2DAE0;
+    margin: 0;
+}
+
 /* About Page Styling */
 .about-hero {
     text-align: center;
