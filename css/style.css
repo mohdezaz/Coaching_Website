@@ -517,20 +517,29 @@ iframe {
 }
 
 /* Header Styling */
-.header-content {
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .logo {
-    height: 80px;
-    margin-right: 20px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
 }
 
 header h1 {
     color: #A2DAE0;
     margin: 0;
+    font-size: 1.8em;
 }
 
 /* About Page Styling */
