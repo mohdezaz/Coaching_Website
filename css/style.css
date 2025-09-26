@@ -44,8 +44,14 @@ nav ul li a {
     padding: 1em;
 }
 
-nav ul li a:hover, nav ul li.active a {
+nav ul li.active > a {
     background-color: #A70107; /* Dark Red */
+    border-radius: 5px;
+    text-decoration: none !important;
+}
+
+nav ul li a:hover {
+    background-color: #ED0101; /* Bright Red */
     border-radius: 5px;
     text-decoration: none !important;
 }
