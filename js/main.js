@@ -30,4 +30,22 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = `mailto:clusterclasses0001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
     }
+
+    // Scroll Animation Logic
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    fadeInElements.forEach(element => {
+        observer.observe(element);
+    });
 });
