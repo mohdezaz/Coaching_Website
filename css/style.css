@@ -645,3 +645,44 @@ header h1 {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Our Team Page Styling */
+.team-section {
+    text-align: center;
+}
+
+.team-subtitle {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.faculty-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.faculty-card h3 {
+    color: #0E49B5;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.faculty-card p {
+    color: #333;
+    margin-bottom: 0.5em;
+}
