@@ -10,7 +10,16 @@ body {
     line-height: 1.6;
 }
 
-header, footer {
+header {
+    background-color: #06065D; /* Dark Blue */
+    color: #A2DAE0; /* Light Blue/Green */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+footer {
     background-color: #06065D; /* Dark Blue */
     color: #A2DAE0; /* Light Blue/Green */
     padding: 1em;
@@ -19,41 +28,44 @@ header, footer {
 }
 
 nav {
-    background-color: #0E49B5; /* Medium Blue */
-    padding: 1em;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 1em;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #A2DAE0; /* Light Blue/Green */
+    color: #A2DAE0;
     text-decoration: none;
-    padding: 1em;
-}
-
-nav ul li.active > a {
-    background-color: #A70107; /* Dark Red */
-    border-radius: 5px;
-    text-decoration: none !important;
+    padding: 20px 10px;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 nav ul li a:hover {
-    background-color: #ED0101; /* Bright Red */
-    border-radius: 5px;
-    text-decoration: none !important;
+    color: white;
+    background-color: transparent;
+}
+
+nav ul li.active > a {
+    color: white;
+    box-shadow: inset 0 -3px 0 #ED0101;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 main {
@@ -288,28 +300,36 @@ iframe {
 /* Dropdown Menu Styling */
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    top: 100%;
+    left: 0;
+    background-color: #0E49B5;
+    min-width: 220px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    padding: 0;
 }
 
 .dropdown-content a {
-    color: black;
+    color: #A2DAE0;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    border-radius: 0;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #ED0101;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
