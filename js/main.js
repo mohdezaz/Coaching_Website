@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Scroll Animation Logic
     const fadeInElements = document.querySelectorAll('.fade-in');
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -44,8 +43,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }, {
         threshold: 0.1
     });
-
     fadeInElements.forEach(element => {
         observer.observe(element);
     });
+
+    // Gallery Lightbox Logic
+    const modal = document.getElementById("lightbox-modal");
+    if (modal) {
+        const modalImg = document.getElementById("lightbox-img");
+        const galleryImages = document.querySelectorAll(".gallery-img");
+        const closeBtn = document.querySelector(".close-lightbox");
+
+        galleryImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
 });
