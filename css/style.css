@@ -665,6 +665,11 @@ header h1 {
     transform: translateY(0);
 }
 
+.home-about-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
 /* Our Team Page Styling */
 .team-section {
     text-align: center;
