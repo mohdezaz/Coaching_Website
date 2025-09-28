@@ -285,6 +285,16 @@ iframe {
 }
 
 /* Accordion Styling */
+.faq-section {
+    text-align: center;
+}
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
 .accordion {
     background-color: #f4f4f4;
     color: #444;
@@ -300,20 +310,26 @@ iframe {
     border-radius: 5px;
 }
 
-.accordion.active, .accordion:hover {
-    background-color: #A2DAE0; /* Light Blue/Green */
+.accordion:hover {
+    background-color: #e2e2e2;
+}
+
+.accordion.active {
+    background-color: #A2DAE0;
 }
 
 .accordion:after {
-    content: '\\002B';
-    color: #777;
+    content: '\\002B'; /* Plus sign */
+    color: #0E49B5;
     font-weight: bold;
     float: right;
     margin-left: 5px;
+    transition: transform 0.3s ease;
 }
 
 .accordion.active:after {
-    content: "\\2212";
+    content: "\\2212"; /* Minus sign */
+    transform: rotate(45deg);
 }
 
 /* Dropdown Menu Styling */
