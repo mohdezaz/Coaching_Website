@@ -556,6 +556,37 @@ iframe {
     transform: scale(1.05);
 }
 
+.pyq-category-item {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.pyq-main-category {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #06065D;
+    margin-bottom: 15px;
+}
+
+.pyq-sub-category a {
+    display: inline-block;
+    background-color: #A2DAE0;
+    color: #06065D;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.pyq-sub-category a:hover {
+    background-color: #0E49B5;
+    color: white;
+}
+
 /* Course Details Page Styling */
 .course-details h2 {
     color: #0E49B5;
