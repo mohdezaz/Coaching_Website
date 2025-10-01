@@ -954,6 +954,78 @@ header h1 {
     }
 }
 
+/* Login/Signup Popup Styling */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    animation: zoom 0.3s;
+}
+
+.close-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-popup-btn:hover,
+.close-popup-btn:focus {
+    color: #333;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    color: #06065D;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#login-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login-form .cta-button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.popup-content p {
+    margin-top: 20px;
+}
+
 body.mobile-nav-open .header-container .logo-container h1 {
     visibility: hidden;
 }
