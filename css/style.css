@@ -323,20 +323,6 @@ iframe {
     border-bottom-right-radius: 0;
 }
 
-.accordion:after {
-    font-family: 'Font Awesome 6 Free';
-    content: '\\f067'; /* fa-plus */
-    font-weight: 900;
-    color: #0E49B5;
-    float: right;
-    margin-left: 5px;
-    transition: transform 0.4s ease;
-}
-
-.accordion.active:after {
-    content: '\\f068'; /* fa-minus */
-    color: white;
-}
 
 /* Dropdown Menu Styling */
 .dropdown {
