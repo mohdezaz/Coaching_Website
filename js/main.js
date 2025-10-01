@@ -71,4 +71,21 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    // Mobile Navigation Logic
+    const hamburger = document.querySelector('.hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const closeBtn = document.querySelector('.close-btn');
+
+    if (hamburger && mobileNav && closeBtn) {
+        hamburger.addEventListener('click', function() {
+            mobileNav.style.width = '100%';
+            document.body.classList.add('mobile-nav-open');
+        });
+
+        closeBtn.addEventListener('click', function() {
+            mobileNav.style.width = '0';
+            document.body.classList.remove('mobile-nav-open');
+        });
+    }
 });

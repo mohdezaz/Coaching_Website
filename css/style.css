@@ -881,3 +881,107 @@ header h1 {
 .solution p {
     margin-bottom: 10px;
 }
+
+/* Responsive Design */
+.hamburger-menu {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.mobile-nav-overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: rgba(6, 6, 93, 0.95);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.mobile-nav-overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.mobile-nav-overlay a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 2em;
+    color: #A2DAE0;
+    display: block;
+    transition: 0.3s;
+}
+
+.mobile-nav-overlay a:hover, .mobile-nav-overlay a:focus {
+    color: #f1f1f1;
+}
+
+.mobile-nav-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 3em;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+
+    .header-container {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hero-text h2 {
+        font-size: 2.5em;
+    }
+
+    .course-cards-container, .faculty-grid, .philosophy-points, .values-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-two-column {
+        flex-direction: column;
+    }
+}
+
+body.mobile-nav-open .header-container .logo-container h1 {
+    visibility: hidden;
+}
+
+body.mobile-nav-open .hamburger-menu {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
