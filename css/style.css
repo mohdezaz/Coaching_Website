@@ -457,21 +457,60 @@ iframe {
 
 /* Footer Styling */
 .site-footer {
-    background-color: #06065D;
+    background-color: #08086a; /* Slightly lighter dark blue */
     color: #A2DAE0;
-    padding: 40px 0;
+    padding: 60px 0;
+    border-top: 4px solid #ED0101; /* Bright red accent */
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 40px; /* Increased gap */
+    text-align: left; /* Align text to the left */
 }
+
+.footer-column {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInFooter 0.6s forwards;
+}
+
+/* Staggered animation for footer columns */
+.footer-column:nth-child(1) { animation-delay: 0.2s; }
+.footer-column:nth-child(2) { animation-delay: 0.4s; }
+.footer-column:nth-child(3) { animation-delay: 0.6s; }
+.footer-column:nth-child(4) { animation-delay: 0.8s; }
+
+
+@keyframes fadeInFooter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .footer-column h4 {
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.5em; /* Larger heading */
+    position: relative;
+    padding-bottom: 10px;
 }
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #ED0101; /* Bright red */
+}
+
 
 .footer-column ul {
     list-style: none;
@@ -479,42 +518,52 @@ iframe {
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Increased spacing */
 }
 
 .footer-column a {
     color: #A2DAE0;
     text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
 }
 
 .footer-column a:hover {
     color: white;
+    padding-left: 5px; /* Add a subtle shift on hover */
+}
+
+.footer-column p {
+    margin-bottom: 15px;
 }
 
 .footer-column p i {
-    margin-right: 10px;
+    margin-right: 15px; /* Increased icon spacing */
+    color: #ED0101; /* Bright red icon color */
+    width: 20px;
+    text-align: center;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px; /* Increased spacing */
     border-top: 1px solid #0E49B5;
-    padding-top: 20px;
+    padding-top: 30px; /* Increased spacing */
 }
 
 .social-media {
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Increased spacing */
 }
 
 .social-media a {
     color: #A2DAE0;
-    margin: 0 15px;
-    font-size: 1.8em;
-    transition: color 0.3s ease;
+    margin: 0 18px; /* Increased spacing */
+    font-size: 2em; /* Larger icons */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-media a:hover {
     color: white;
+    transform: translateY(-5px); /* Add a lift effect on hover */
 }
 
 /* Course Links Page Styling */
