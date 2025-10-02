@@ -459,7 +459,7 @@ iframe {
 .site-footer {
     background-color: #08086a; /* Slightly lighter dark blue */
     color: #A2DAE0;
-    padding: 60px 0;
+    padding: 40px 0; /* Reduced padding */
     border-top: 4px solid #ED0101; /* Bright red accent */
     position: relative;
     overflow: hidden;
@@ -467,8 +467,8 @@ iframe {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px; /* Increased gap */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax for smaller columns */
+    gap: 30px; /* Reduced gap */
     text-align: left; /* Align text to the left */
 }
 
@@ -483,6 +483,7 @@ iframe {
 .footer-column:nth-child(2) { animation-delay: 0.4s; }
 .footer-column:nth-child(3) { animation-delay: 0.6s; }
 .footer-column:nth-child(4) { animation-delay: 0.8s; }
+.footer-column:nth-child(5) { animation-delay: 1.0s; }
 
 
 @keyframes fadeInFooter {
@@ -495,8 +496,8 @@ iframe {
 
 .footer-column h4 {
     color: white;
-    margin-bottom: 25px;
-    font-size: 1.5em; /* Larger heading */
+    margin-bottom: 20px; /* Reduced margin */
+    font-size: 1.3em; /* Reduced font size */
     position: relative;
     padding-bottom: 10px;
 }
@@ -506,7 +507,7 @@ iframe {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 40px;
+    width: 30px; /* Reduced width */
     height: 2px;
     background-color: #ED0101; /* Bright red */
 }
@@ -518,7 +519,7 @@ iframe {
 }
 
 .footer-column ul li {
-    margin-bottom: 15px; /* Increased spacing */
+    margin-bottom: 10px; /* Reduced spacing */
 }
 
 .footer-column a {
@@ -533,37 +534,38 @@ iframe {
 }
 
 .footer-column p {
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 0.9em; /* Smaller font size for contact info */
 }
 
 .footer-column p i {
-    margin-right: 15px; /* Increased icon spacing */
+    margin-right: 10px; /* Reduced icon spacing */
     color: #ED0101; /* Bright red icon color */
-    width: 20px;
+    width: 18px; /* Reduced width */
     text-align: center;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 60px; /* Increased spacing */
+    margin-top: 40px; /* Reduced spacing */
     border-top: 1px solid #0E49B5;
-    padding-top: 30px; /* Increased spacing */
+    padding-top: 20px; /* Reduced spacing */
 }
 
 .social-media {
-    margin-bottom: 25px; /* Increased spacing */
+    margin-bottom: 20px; /* Reduced spacing */
 }
 
 .social-media a {
     color: #A2DAE0;
-    margin: 0 18px; /* Increased spacing */
-    font-size: 2em; /* Larger icons */
+    margin: 0 15px; /* Reduced spacing */
+    font-size: 1.8em; /* Reduced icon size */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-media a:hover {
     color: white;
-    transform: translateY(-5px); /* Add a lift effect on hover */
+    transform: translateY(-3px); /* Reduced lift effect */
 }
 
 /* Course Links Page Styling */
