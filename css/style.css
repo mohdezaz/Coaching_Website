@@ -459,10 +459,14 @@ iframe {
 .site-footer {
     background-color: #08086a; /* Slightly lighter dark blue */
     color: #A2DAE0;
-    padding: 40px 0; /* Reduced padding */
+    padding: 20px 0; /* Further reduced padding */
     border-top: 4px solid #ED0101; /* Bright red accent */
     position: relative;
     overflow: hidden;
+}
+
+.site-footer .container {
+    width: 70%; /* Reduced width */
 }
 
 .footer-grid {
