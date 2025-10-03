@@ -56,9 +56,24 @@ nav ul li a {
     border-radius: 0;
 }
 
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ED0101; /* Bright Red */
+    transition: width 0.3s ease-in-out;
+}
+
 nav ul li a:hover {
     color: white;
-    background-color: transparent;
+}
+
+nav ul li a:hover::after {
+    width: 80%;
 }
 
 nav ul li.active > a {
@@ -97,10 +112,12 @@ h1, h2 {
 
 a {
     color: #ED0101; /* Bright Red */
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: none;
+    color: #A70107; /* Dark Red */
 }
 
 p {
@@ -126,11 +143,14 @@ iframe {
     margin-top: 10px;
     margin-right: 10px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
     background-color: #A70107; /* Dark Red */
     text-decoration: none !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /* Contact page styling */
@@ -157,6 +177,12 @@ iframe {
     margin-right: 1em;
     width: 30px;
     text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: scale(1.2);
+    color: #ED0101; /* Bright Red */
 }
 
 .contact-item a, .contact-item span {
@@ -231,9 +257,9 @@ iframe {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+.testimonial-card:hover, .faculty-card:hover, .philosophy-card:hover, .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .testimonial-card i {
@@ -330,7 +356,8 @@ iframe {
 }
 
 .dropdown-content {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 100%;
     left: 0;
@@ -341,6 +368,8 @@ iframe {
     border-radius: 0 0 5px 5px;
     overflow: hidden;
     padding: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
 }
 
 .dropdown-content a {
@@ -360,7 +389,9 @@ iframe {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .panel {
@@ -728,6 +759,7 @@ header h1 {
     font-size: 2.5em;
     color: #0E49B5;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
 
@@ -748,6 +780,10 @@ header h1 {
     background-color: #f9f9f9;
     padding: 30px;
     border-radius: 10px;
+}
+
+.philosophy-card:hover i, .value-card:hover i {
+    color: #ED0101; /* Bright Red */
 }
 
 /* Animation */
@@ -792,10 +828,6 @@ header h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.faculty-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
 
 .faculty-card h3 {
     color: #0E49B5;
