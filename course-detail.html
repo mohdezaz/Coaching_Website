@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Cluster Classes</title>
+    <title>Course Details - Cluster Classes</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -59,41 +59,38 @@
             <a href="gallery.html">Gallery</a>
         </div>
     </div>
-    <main class="container">
-        <section class="course-links-section">
-            <h2>Our Courses</h2>
-            <ul class="course-links" id="course-list">
-                <!-- Course links will be dynamically inserted here -->
-            </ul>
-        </section>
+    <main class="container" id="course-detail-content">
+        <!-- Course details will be dynamically inserted here -->
     </main>
     <script>
         document.addEventListener("DOMContentLoaded", async function() {
-            const courseList = document.getElementById('course-list');
+            const content = document.getElementById('course-detail-content');
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('id');
+
+            if (!courseId) {
+                content.innerHTML = '<p>No course specified.</p>';
+                return;
+            }
 
             try {
-                const response = await fetch('http://127.0.0.1:5000/courses');
+                const response = await fetch(`http://127.0.0.1:5000/courses/${courseId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const courses = await response.json();
+                const course = await response.json();
 
-                if (courses.length === 0) {
-                    courseList.innerHTML = '<li>No courses available at the moment.</li>';
-                    return;
-                }
-
-                courses.forEach(course => {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.href = `course-detail.html?id=${course.id}`;
-                    link.textContent = course.title;
-                    listItem.appendChild(link);
-                    courseList.appendChild(listItem);
-                });
+                content.innerHTML = `
+                    <section class="course-detail">
+                        <h2>${course.title}</h2>
+                        <p><strong>Category:</strong> ${course.category}</p>
+                        <p>${course.description}</p>
+                        <a href="courses.html" class="cta-button">Back to Courses</a>
+                    </section>
+                `;
             } catch (error) {
-                console.error('Error fetching courses:', error);
-                courseList.innerHTML = '<li>Error loading courses. Please try again later.</li>';
+                console.error('Error fetching course details:', error);
+                content.innerHTML = '<p>Error loading course details. Please try again later.</p>';
             }
         });
     </script>

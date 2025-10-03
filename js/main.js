@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Contact Form Logic
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
+        contactForm.addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const name = document.getElementById('name').value;
@@ -24,10 +24,21 @@ document.addEventListener("DOMContentLoaded", function() {
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
 
-            const subject = 'New Inquiry from ' + name;
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            const response = await fetch('http://127.0.0.1:5000/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, phone, message }),
+            });
 
-            window.location.href = `mailto:clusterclasses0001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                contactForm.reset();
+            } else {
+                alert('Error: ' + JSON.stringify(result.errors));
+            }
         });
     }
 
@@ -92,11 +103,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Login/Signup Popup Logic
     const loginPopup = document.getElementById('login-popup');
     const closePopupBtn = document.querySelector('.close-popup-btn');
+    const loginView = document.getElementById('login-view');
+    const signupView = document.getElementById('signup-view');
+    const showSignupBtn = document.getElementById('show-signup');
+    const showLoginBtn = document.getElementById('show-login');
+    const signupForm = document.getElementById('signup-form');
+    const loginForm = document.getElementById('login-form');
 
     if (loginPopup && closePopupBtn) {
         // Show popup after 30 seconds
         setTimeout(() => {
-            loginPopup.style.display = 'flex';
+            if (loginPopup.style.display !== 'flex') {
+                loginPopup.style.display = 'flex';
+            }
         }, 30000);
 
         // Close popup when the close button is clicked
@@ -108,6 +127,70 @@ document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener('click', (event) => {
             if (event.target == loginPopup) {
                 loginPopup.style.display = 'none';
+            }
+        });
+
+        // Toggle to signup view
+        showSignupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginView.style.display = 'none';
+            signupView.style.display = 'block';
+        });
+
+        // Toggle to login view
+        showLoginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupView.style.display = 'none';
+            loginView.style.display = 'block';
+        });
+
+        // Handle Signup Form Submission
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            const response = await fetch('http://127.0.0.1:5000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, email, password, confirm_password: confirmPassword })
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                showLoginBtn.click(); // Switch to login view
+            } else {
+                alert('Error: ' + JSON.stringify(result.errors));
+            }
+        });
+
+        // Handle Login Form Submission
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const response = await fetch('http://127.0.0.1:5000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                loginPopup.style.display = 'none';
+                // Here you would typically save a token and update the UI
+            } else {
+                alert('Error: ' + result.message);
             }
         });
     }
