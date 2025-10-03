@@ -92,11 +92,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Login/Signup Popup Logic
     const loginPopup = document.getElementById('login-popup');
     const closePopupBtn = document.querySelector('.close-popup-btn');
+    const signupLink = document.getElementById('signup-link');
+    const loginLink = document.getElementById('login-link');
+    const loginView = document.getElementById('login-view');
+    const signupView = document.getElementById('signup-view');
 
     if (loginPopup && closePopupBtn) {
         // Show popup after 30 seconds
         setTimeout(() => {
-            loginPopup.style.display = 'flex';
+            if(loginPopup) loginPopup.style.display = 'flex';
         }, 30000);
 
         // Close popup when the close button is clicked
@@ -110,5 +114,37 @@ document.addEventListener("DOMContentLoaded", function() {
                 loginPopup.style.display = 'none';
             }
         });
+
+        // Toggle to signup view
+        if(signupLink) {
+            signupLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginView.style.display = 'none';
+                signupView.style.display = 'block';
+            });
+        }
+
+        // Toggle to login view
+        if(loginLink) {
+            loginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                signupView.style.display = 'none';
+                loginView.style.display = 'block';
+            });
+        }
+
+        // Handle signup form submission
+        const signupForm = document.getElementById('signup-form');
+        if (signupForm) {
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = signupForm.querySelector('input[type="text"]').value;
+                const email = signupForm.querySelector('input[type="email"]').value;
+                const password = signupForm.querySelector('input[type="password"]').value;
+                console.log('Sign Up Submitted:', { name, email, password });
+                alert('Sign up successful! (Check console for data)');
+                loginPopup.style.display = 'none';
+            });
+        }
     }
 });
