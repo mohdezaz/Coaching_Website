@@ -56,16 +56,35 @@ nav ul li a {
     border-radius: 0;
 }
 
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #ED0101; /* Bright Red */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
 nav ul li a:hover {
     color: white;
-    background-color: transparent;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 nav ul li.active > a {
     color: white;
-    box-shadow: inset 0 -3px 0 #ED0101;
-    background-color: transparent;
-    border-radius: 0;
+}
+
+nav ul li.active > a::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 main {
@@ -131,6 +150,8 @@ iframe {
 .cta-button:hover {
     background-color: #A70107; /* Dark Red */
     text-decoration: none !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* Contact page styling */
@@ -232,8 +253,8 @@ iframe {
 }
 
 .testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .testimonial-card i {
@@ -535,6 +556,7 @@ iframe {
 .footer-column a:hover {
     color: white;
     padding-left: 5px; /* Add a subtle shift on hover */
+    text-decoration: underline;
 }
 
 .footer-column p {
@@ -635,6 +657,8 @@ iframe {
 .pyq-sub-category a:hover {
     background-color: #0E49B5;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Course Details Page Styling */
@@ -793,8 +817,8 @@ header h1 {
 }
 
 .faculty-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .faculty-card h3 {
