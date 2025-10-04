@@ -68,11 +68,11 @@ nav ul li a::after {
     transition: width 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
+nav ul li:not(.active) a:hover {
     color: white;
 }
 
-nav ul li a:hover::after {
+nav ul li:not(.active) a:hover::after {
     width: 80%;
 }
 
