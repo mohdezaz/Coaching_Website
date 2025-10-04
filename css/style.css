@@ -72,13 +72,13 @@ nav ul li:not(.active) a:hover {
     color: white;
 }
 
-nav ul li:not(.active) a:hover::after {
+nav ul li:not(.active) a:hover::after,
+nav ul li.active a::after {
     width: 80%;
 }
 
 nav ul li.active > a {
     color: white;
-    box-shadow: inset 0 -3px 0 #ED0101;
     background-color: transparent;
     border-radius: 0;
 }
