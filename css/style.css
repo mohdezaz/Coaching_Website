@@ -72,7 +72,7 @@ nav ul li:not(.active) a:hover {
     color: white;
 }
 
-nav ul li:not(.active) a:hover::after,
+nav ul li:not(.active) a:not(.dropbtn):hover::after,
 nav ul li.active a::after {
     width: 80%;
 }
