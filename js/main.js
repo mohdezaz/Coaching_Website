@@ -89,26 +89,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Login/Signup Popup Logic
-    const loginPopup = document.getElementById('login-popup');
-    const closePopupBtn = document.querySelector('.close-popup-btn');
-
-    if (loginPopup && closePopupBtn) {
-        // Show popup after 30 seconds
-        setTimeout(() => {
-            loginPopup.style.display = 'flex';
-        }, 30000);
-
-        // Close popup when the close button is clicked
-        closePopupBtn.addEventListener('click', () => {
-            loginPopup.style.display = 'none';
-        });
-
-        // Close popup when clicking outside the content
-        window.addEventListener('click', (event) => {
-            if (event.target == loginPopup) {
-                loginPopup.style.display = 'none';
-            }
-        });
-    }
 });
