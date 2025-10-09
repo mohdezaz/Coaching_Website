@@ -73,7 +73,7 @@ nav ul li:not(.active) a:hover {
 }
 
 nav ul li:not(.active) a:not(.dropbtn):hover::after,
-nav ul li.active a::after {
+nav ul li.active a:not(.dropbtn)::after {
     width: 80%;
 }
 
